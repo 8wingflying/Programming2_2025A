@@ -1,3 +1,5 @@
+# 小小測驗
+- [程式閱讀題](程式閱讀題.md)
 ## code1.c
 ```c
 #include <stdio.h>
@@ -14,7 +16,7 @@ int main(void) {
 }
 
 ```
-## code2.c
+## code2.c 
 ```c
 #include <stdio.h>
 int main() {
@@ -288,40 +290,296 @@ int main() {
   - 使用三種loop技術撰寫
   - 3!=3*2*1 =6
 
-## code12.c
+## code12.c  多重迴圈範例: 99乘法表
+```
+#include <stdio.h>
+int main() {
+    int i,j;   
+    for(i=1;i<=9;i++) {
+        for(j=1;j<=9;j++)
+            printf("%d*%d=%2d\t", i, j, i*j);
+        printf("\n");
+    }
+    return 0;
+}
 ```
 
-```
-
-
+# 函數(function)
 ## code13.c
 ```
+//main()在後 其他函數在前
 
-```
-## code14.c
-```
+#include <stdio.h>
+ 
+int ifactorial(int z)
+{
+	int mul = 1, i = 1;
+	while(i <= z)
+	{
+		mul *= i;
+		i++;
+	};
+	return mul;
+}
 
-```
-## code15.c
-```
-
-```
-## code16.c
-```
-
-```
-## code17.c
-```
-
-```
-
-## code18.c
-```
-
-```
-## code19.c
+int  main()
+{
+    int i = 4;
+    printf("%d 的階乘為%d\n", i, ifactorial(i));
+    return 0;
+}
 ```
 
+```c
+//main()在前 其他函數在後
+//要先宣告 ==> int fun(int);
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int a=10, fun(int);
+
+int main(void) {
+
+  int b=6;
+  printf("a=%d, b=%d, fun(a)=%d\n", a, b, fun(a));
+  return 0;
+}
+
+int fun(int b) {
+  a -=5; b /=2;
+  return(a+b);
+}
+```
+## code14.c 函數呼叫
+- 函數呼叫:call by value(傳值呼叫) vs call by address(傳址呼叫)| 兩個數字互換的C程式
+```c
+#include <stdio.h>
+/* 函數的宣告 */
+void swap (int a, int b);
+
+int main (void) {
+  int i = 11, j = 22;
+  printf ("i = %d, j = %d\n" , i, j);
+  swap (i, j);
+  printf ("i = %d, j = %d\n" , i, j);
+  return 0;
+}
+
+void swap (int a, int b) {
+  printf ("互換前:a = %d, b = %d\n" , a, b);
+  int temp = a;
+  a = b;
+  b = temp;
+  printf ("互換後:a = %d, b = %d\n" , a, b);
+}
+```
+## code15.c  遞迴函數1
+```
+遞迴式:f(n) = n*(n-1)(n-2)......1 = n*f(n-1)
+   f(3)=3*f(2)=3*[2*f(1)]=3*[2*{1}]
+終止式:f(1)=1
+```
+```c
+#include <stdio.h>
+ 
+double factorial(unsigned int i)
+{
+   if(i <= 1)
+      return 1;
+   else   return i * factorial(i - 1);
+}
+
+int  main()
+{
+    int i = 15;
+    printf("%d 的階乘為%f\n", i, factorial(i));
+    return 0;
+}
+```
+## code16.c  遞迴函數2:費式序列Fibonacci Serie
+```
+費式序列Fibonacci Series: 0 1 1 2 3 5 8 13 21 34
+f(0)=0, f(1)=1, f(n)=f(n-1)+f(n-2)
+底下是用迴圈方式計算費式序列Fibonacci Serie
+作業:使用遞迴函數方式計算費式序列Fibonacci Serie
+```
+```c
+#include<stdio.h>    
+void printFibonacci(int n){    
+  static int n1=0,n2=1,n3;    
+
+  if(n>0){    
+    n3 = n1 + n2;    
+    n1 = n2;    
+    n2 = n3;    
+    printf("%d ",n3);    
+    printFibonacci(n-1);    
+    }    
+ }    
+
+int main(){    
+   int n;
+  
+   printf("請輸入你要列印幾項費式序列(要整數): ");    
+   scanf("%d",&n);    
+   printf("費式序列Fibonacci Series: ");    
+   printf("%d %d ",0,1);//註解1:先列印前兩個費式序列   
+   printFibonacci(n-2);//註解2:在印出其他費式序列   
+   return 0;  
+ }    
+```
+
+
+## code17.c  變數類型與scope(管轄範圍)
+```c
+#include <stdio.h>
+ 
+/* 全域(global)變數宣告 */
+int g = 20;
+
+void printg()
+{
+  printf ("value of g in printg= %d\n",  g);
+}
+
+void printg2()
+{
+  /* 區域(local)變數宣告 */
+  int g = 99;
+  printf ("value of g in printg2= %d\n",  g);
+}
+
+int main ()
+{
+  /* 區域變數宣告 */
+  int g = 10;
+
+  printg();
+  printf ("value of g in main= %d\n",  g);
+ 
+  return 0;
+}
+```
+
+## code18.c 陣列
+```
+陣列的存取方式:
+1.使用索引(index) 存取陣列資料
+2.使用指標(pointer)存取陣列資料
+```
+```c
+#include <stdio.h>
+ 
+int main ()
+{
+   int n[10]; /* n 是一個包含 10 個整數的陣列 */
+   int i,j;
+ 
+   /* 初始化陣列元素 */         
+   for ( i = 0; i < 10; i++ )
+   {
+      n[ i ] = i + 100; /* 設置元素 i 為 i + 100 */
+   }
+   
+   /* 輸出陣列中每個元素的值 */
+   for (j = 0; j < 10; j++ )
+   {
+      printf("Element[%d] = %d\n", j, n[j] );
+   }
+ 
+   return 0;
+}
+```
+## code19.c  字串(==字元陣列)與字串處理(不使用指標)
+```c
+#include <stdio.h>
+#include <string.h>
+ 
+int main ()
+{
+   char str1[9] = "CTFer";
+   char str2[9] = "hacker";
+   char str3[9];
+   char str4[9];
+   int  len ;
+ 
+   /* 複製 str1 的內容複製到 str3 */
+   strcpy(str3, str1);
+   printf("strcpy( str3, str1) :  %s\n", str3 );
+ 
+   /* 連接 str1 和 str2後的結果 存到str1 */
+   strcat( str1, str2);
+   printf("strcat( str1, str2):   %s\n", str1 );
+ 
+    /* 連接 str2 和 str1後的結果 存到str1   */
+   strcat( str2, str1);
+   printf("strcat( str2, str1):   %s\n", str2 );
+   
+   /* 連接後，str1 的總長度 */
+   len = strlen(str1);
+   printf("strlen(str1) :  %d\n", len );
+ 
+   strcpy(str4, str1);
+   printf("strcpy( str4, str1) :  %s\n", str3 );
+   str4[3] = '\0';
+   printf(str4);
+   
+   return 0;
+}
+```
+```
+ttps://www.onlinegdb.com/online_c_compiler 
+
+執行結果
+main.c:38:11: warning: format not a string literal and no format arguments [-Wformat-security]    
+    printf(str4 );                                                                                
+           ^~~~                                                                                   
+strcpy( str3, str1) :  CTFer                                                                      
+strcat( str1, str2):   CTFerhacker                                                                
+strcat( str2, str1):   erCTFerhacker                                                              
+strlen(str1) :  22                                                                                
+strcpy( str4, str1) :  cker                                                                       
+*** stack smashing detected ***: ./a.out terminated                                               
+CTFAborted (core dumped)    
+```
+
+```c
+//修正後的程式
+#include <stdio.h>
+#include <string.h>
+ 
+int main ()
+{
+   char str1[9] = "CTFer";
+   char str2[9] = "hacker";
+   char str3[9];
+   char str4[9];
+   int  len ;
+ 
+   /* 複製 str1 的內容複製到 str3 與str 4 */
+   strcpy(str4, str1);
+   strcpy(str3, str1);
+   printf("strcpy( str3, str1) :  %s\n", str3 );
+ 
+   /* 連接 str1 和 str2後的結果 存到str1 */
+   strcat( str1, str2);
+   printf("strcat( str1, str2):   %s\n", str1 );
+ 
+    /* 連接 str2 和 str1後的結果 存到str1   */
+   //strcat( str2, str1);
+   //printf("strcat( str2, str1):   %s\n", str2 );
+   
+   /* 連接後，str1 的總長度 */
+   len = strlen(str1);
+   printf("strlen(str1) :  %d\n", len );
+ 
+   printf("strcpy( str4, str1) :  %s\n", str4 );
+   str4[3] = '\0';
+   printf("處理過的字串變成(請說明why?) :  %s\n",str4);
+   
+   return 0;
+}
 ```
 ## code20.c
 ```
