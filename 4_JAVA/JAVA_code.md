@@ -1,18 +1,10 @@
 ## code1.java
 ```c
-#include <stdio.h>
-
-int main(void) {
-	float miles;
-
-	printf("A88168 也可以改成中文Please enter miles:");
-	scanf("%f", &miles);
-
-	float kilometers = miles * 1.6;
-
-	printf("%f Kilometers", kilometers);
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!"); 
+    }
 }
-
 ```
 ## code2.java
 ```
