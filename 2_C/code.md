@@ -643,7 +643,7 @@ int main(void) {
     return 0;
 }
 ```
-## 陣列存取技術:使用索引(index)存取陣列
+## 陣列存取技術:使用指標(pointer)存取陣列
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -709,6 +709,7 @@ int main()
   return 0;
 }
 ```
+# 字串(string) == 特殊型的字元陣列
 
 ## code23.c
 ```
