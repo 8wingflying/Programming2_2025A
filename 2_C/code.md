@@ -5,7 +5,7 @@
 int main(void) {
 	float miles;
 
-	printf("Please enter miles:");
+	printf("A88168 有可以改成中文Please enter miles:");
 	scanf("%f", &miles);
 
 	float kilometers = miles * 1.6;
@@ -14,3 +14,177 @@ int main(void) {
 }
 
 ```
+## code2.c
+```
+
+```
+
+
+## code3.c
+```
+
+```
+## code4.c
+```
+
+```
+## code5.c
+```
+
+```
+## code6.c
+```
+
+```
+## code7.c
+```
+
+```
+
+## code8.c
+```
+
+```
+## code9.c
+```
+
+```
+## code10.c
+```
+
+```
+## code11.c
+```
+
+```
+
+## code12.c
+```
+
+```
+
+
+## code13.c
+```
+
+```
+## code14.c
+```
+
+```
+## code15.c
+```
+
+```
+## code16.c
+```
+
+```
+## code17.c
+```
+
+```
+
+## code18.c
+```
+
+```
+## code19.c
+```
+
+```
+## code20.c
+```
+
+```
+
+## code21.c
+```
+
+```
+
+## code22.c
+```
+
+```
+
+
+## code23.c
+```
+
+```
+## code24.c
+```
+
+```
+## code25.c
+```
+
+```
+## code26.c
+```
+
+```
+## code27.c
+```
+
+```
+
+## code28.c
+```
+
+```
+## code29.c
+```
+
+```
+## code30.c
+```
+
+```
+
+## code31.c
+```
+
+```
+
+## code32.c
+```
+
+```
+
+
+## code33.c
+```
+
+```
+## code34.c
+```
+
+```
+## code35.c
+```
+
+```
+## code36.c
+```
+
+```
+## code37.c
+```
+
+```
+
+## code18.c
+```
+
+```
+## code19.c
+```
+
+```
+## code20.c
+```
+
+```
+
