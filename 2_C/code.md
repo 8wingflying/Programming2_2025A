@@ -5,7 +5,7 @@
 int main(void) {
 	float miles;
 
-	printf("A88168 有可以改成中文Please enter miles:");
+	printf("A88168 也可以改成中文Please enter miles:");
 	scanf("%f", &miles);
 
 	float kilometers = miles * 1.6;
