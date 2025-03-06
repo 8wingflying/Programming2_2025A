@@ -389,8 +389,12 @@ b.函數需要擁有一個終止條件，以便結束遞迴函數的執行，否
 1.N! 計算 N!階層函數: 4!=4*3*2*1=24  ==> f(n) = n*f(n-1);
 2.f(n)=1+2+3+....+n ==>  級數和:1加到n的值  ==> f(n) = n + f(n-1);
 3.費式序列Fibonacci Serie
-4.二項式係數
-5.河內塔（Tower of Hanoi）
+4.二項式係數(Binomial coeff)
+5.m與n的最大公因數(GCD).
+6.河內塔（Tower of Hanoi）
+```
+```
+小測驗:用遞迴求算1*2+2*3+3*4+…+(n-1)*n之和
 ```
 ```
 遞迴式:f(n) = n*(n-1)(n-2)......1 = n*f(n-1)
@@ -598,21 +602,113 @@ int main ()
    return 0;
 }
 ```
+# 指標(pointer)
 ## code20.c
 ```
+#include <stdio.h>
+
+int main(void) {
+    int x= 38;
+    int *p=&x;
+    
+    printf("%p \n" , &x);
+    printf("%d \n" , x);
+    printf("%d \n" , *&x);
+    printf("%d \n" , *p);
+    printf("%p \n" , p);
+    printf("%p \n" , p+3);
+
+    return 0;
+}
 
 ```
-
+## 陣列
 ## code21.c
 ```
 
 ```
-
+## 陣列存取技術:使用索引(index)存取陣列
 ## code22.c
+```c
+#include <stdio.h>
+
+int main(void) {
+    int a[10] = {3,2,3,4,5,4,7,1,3,2};
+    int b[10] = {0,0,0,0,0,0,0,0,0,0};
+
+    for (i = 0 ; i < 10 ; i=i+1)
+        b[a[i]-1] = b[a[i]-1] + 1;
+   
+    printf ("%d" , b[2] ) ;
+    return 0;
+}
 ```
+## 陣列存取技術:使用索引(index)存取陣列
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10
+
+void fun(int *, int);
+
+int main(void) {
+  int x[SIZE] = {1,2,3,4,5,6,7,8,9,10};
+  fun(x, SIZE);
+  printf("\n");
+  return 0;
+}
+
+void fun(int *a, int size) {
+  if (size > 0) {
+   fun(a+3, size-3);
+   printf("*(a+%d)=%d\n", SIZE-size, *a);
+  }
+}
 
 ```
+```c
+#include <stdio.h>
+int main()
+{
+  int arr[]= {203, 151 , 164, 154, 194};
+  int *p = arr;
+  
+  *p++ += 10;
+  *(p++) += 11;
+  *(++p) += 9;
+  
+  for (int i= 0; i < 5; i++)
+     printf("%d ", arr[i]);
+  return 0;
+}             
+```
+```c
+#include <stdio.h>
+int main()
+{
+  int A[5] = {1, 2, 3, 4, 5};
+  int* p = A + 3;
+  printf("%d \n", p[1]);
+}
 
+```
+```
+#include <stdio.h>
+int main()
+{
+  int array[5] = {100, 215, 321, 254, 165}; 
+  int *k = &array[1]; 
+
+  *k-- += 5; 
+  *(++k) += 9; 
+  *(k++) += 7; 
+  *k++ -= 15; 
+
+  for(int i = 0; i < 5; i++) 
+  printf("%d ", array[i]); 
+  return 0;
+}
+```
 
 ## code23.c
 ```
