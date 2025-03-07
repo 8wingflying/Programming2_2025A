@@ -43,7 +43,7 @@ int main() {
 }
 
 ```
-
+- https://blog.csdn.net/luyao3038/article/details/131979922
 ## code2B.c
 ```c
 #include <stdio.h>
@@ -89,6 +89,7 @@ int main(int argc, char **argv)
     return 0;
 }
 ```
+- https://www.geeksforgeeks.org/bitwise-operators-in-c-cpp/
 ```c
 #include <stdio.h>
 int main(int argc, char **argv)
@@ -109,6 +110,7 @@ int main()
    int a = 11111;
    printf("%d", a);
    a++;
+   // a = a +1;
    printf("%d", a);
    return 0;
 }
@@ -118,7 +120,10 @@ int main()
 int main()
 {
    int a = 11111, b = 22222;
-   printf("%d", (a++)+(++b));
+   printf("A888168 = %d\n", (a++)+(++b));
+   // 11111 +22223
+   printf("b= %d\n", b);
+   printf("a = %d\n", a);   
    return 0;
 }
 ```
