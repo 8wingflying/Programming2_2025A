@@ -3,6 +3,18 @@
 - Linux 開發工具: gcc
 - 線上開發工具
   - https://www.onlinegdb.com/online_c_compiler
+## 參考資料
+- [C 語言教學手冊, 4/e](https://www.tenlong.com.tw/products/9789574424849?list_name=srh)
+- C語言程序設計 : 現代方法, 2/e (修訂版) C Programming: A Modern Approach, 2/e
+  - 英文版
+  - [簡體中譯本](https://www.tenlong.com.tw/products/9787115565198)
+- 線上學習資源
+  - https://www.runoob.com/cprogramming/c-tutorial.html
+  - https://www.geeksforgeeks.org/c-programming-language/?ref=shm
+  - https://en.wikipedia.org/wiki/C_(programming_language)
+  - https://www.w3schools.com/c/index.php
+
+
 ## 課程內容
 #### Chapter 1: C語言基本語法
 - 1-1.基本語法:資料型態(Data Type):識別字及關鍵字/變數與常數/資料型態的轉換
