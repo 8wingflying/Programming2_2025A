@@ -16,6 +16,14 @@ int main(void) {
 }
 
 ```
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Hello, A88168 C!\n");
+    return 0;
+}
+```
 ## code2.c 
 ```c
 #include <stdio.h>
